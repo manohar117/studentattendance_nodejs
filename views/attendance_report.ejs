@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Attendance Report</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <h1>Attendance Report</h1>
+  <ul class="attendance-report-list">
+    <% reportData.forEach(record => { %>
+      <li class="attendance-report-item">
+        <span class="student-name"><%= record.name %></span>
+        <span class="days-present"><%= record.daysPresent %> / <%= record.totalMarkedDays %> </span>
+        <span class="attendance-percentage"><%= record.attendancePercentage %> %</span>
+      </li>
+    <% }); %>
+  </ul>
+</body>
+</html>

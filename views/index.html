@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Date Picker</title>
+  <link rel="stylesheet" href="/styles.css">
+  <style>
+    .form-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 10px;
+    }
+    .left-group {
+      display: flex;
+      align-items: center;
+    }
+    .left-group button {
+      margin-left: 10px; /* Space between date input and search button */
+    }
+  </style>
+</head>
+<body>
+  <!-- <h1>Select Date for Attendance</h1> -->
+  <form id="dateForm" action="/fetch-students" method="post" class="form-container">
+    <div class="left-group">
+      <label for="date" style="font-size: x-large;">Select Date:</label>
+      <input type="date" id="date" name="date" required>
+      <button type="submit" style="background-color: blue; color: aliceblue;">Search</button>
+    </div>
+    <button type="button" style="background-color: limegreen; color: aliceblue;" onclick="window.location.href='/attendance-report'">Attendance Report</button>
+  </form>
+</body>
+</html>

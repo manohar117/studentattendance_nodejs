@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Attendance for <%= date %></title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <h1>Attendance for <%= date %></h1>
+  <ul class="attendance-list">
+    <% attendanceData.forEach(record => { %>
+      <li id="student_<%= record.student_id %>">
+        <span class="student-name"><%= record.name %></span>
+        <% if (record.status === 'present') { %>
+          <span class="status-icon">&#9989;</span>
+          <span class="status-text">Present</span>
+        <% } else if (record.status === 'absent') { %>
+          <span class="status-icon">&#10060;</span>
+          <span class="status-text">Absent</span>
+        <% } %>
+      </li>
+    <% }); %>
+  </ul>
+  <button onclick="window.location.href='/'" style="background-color: chocolate; color: aliceblue; margin-top: 20px;">Home</button>
+</body>
+</html>

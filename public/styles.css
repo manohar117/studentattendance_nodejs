@@ -1,0 +1,54 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 20px;
+  padding: 0;
+  background-color: #f4f4f4;
+}
+
+h1 {
+  color: #333;
+}
+
+form {
+  margin-bottom: 20px;
+}
+
+label {
+  font-weight: bold;
+}
+
+input[type="date"],
+button {
+  padding: 10px;
+  font-size: 16px;
+  margin-top: 10px;
+}
+
+ul.attendance-list,
+ul.attendance-report-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+ul.attendance-list li,
+ul.attendance-report-item {
+  background-color: #fff;
+  padding: 10px;
+  display: flex;
+  /* justify-content: space-between; */
+  align-items: center;
+  /* margin-bottom: 10px; */
+}
+
+.student-name {
+  font-weight: bold;
+  display: inline-block; /* Ensures elements are block-level for alignment */
+      width: 400px; /* Fixed width for student name */
+      margin-right: 40px; /* Adjust as needed */
+      vertical-align: middle;
+}
+
+.days-present,
+.attendance-percentage {
+  margin-left: 20px;
+}

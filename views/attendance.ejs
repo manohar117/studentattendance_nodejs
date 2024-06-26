@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mark Attendance</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <h1>Mark Attendance for <%= date %></h1>
+  <form id="attendanceForm" action="/submit-data" method="post">
+    <input type="hidden" name="date" value="<%= date %>">
+    <ul class="attendance-list">
+      <% students.forEach(student => { %>
+        <li id="student_<%= student.id %>">
+          <span class="student-name"><%= student.name %></span>
+          <div class="radio-group">
+            <input type="radio" id="present_<%= student.id %>" name="status_<%= student.id %>" value="present" required>
+            <label for="present_<%= student.id %>">Present</label>
+            <input type="radio" id="absent_<%= student.id %>" name="status_<%= student.id %>" value="absent" required>
+            <label for="absent_<%= student.id %>">Absent</label>
+          </div>
+        </li>
+      <% }); %>
+    </ul>
+    <button type="submit" style="background-color: chocolate; color: aliceblue;">Mark Attendance</button>
+  </form>
+</body>
+</html>
